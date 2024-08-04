@@ -1,0 +1,31 @@
+﻿@model List<Room>
+
+<link href="~/css/Table.css" rel="stylesheet" />
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="Create">Add New Room</a>
+<br />
+<table>
+    <tr>
+        <th>
+            Room Name
+        </th>
+        <th>
+            Delete
+        </th>
+    </tr>
+
+    @foreach (Room room in Model)
+    {
+        <tr>
+            <td>
+                @room.room_Name
+            </td>
+            <td>
+                <a href="/Room/Delete/@room.room_Id"> delete </a>
+            </td>
+        </tr>
+
+    }
+</table>
+
+
